@@ -4,7 +4,7 @@ namespace ExercicioMoradia.Models
     {
         private string Addresses { get; set; }
         private int Cep { get; set; }
-        private double SizeInMeters { get; set; }
+        protected double SizeInMeters { get; set; }
         private int QuantityOfBathrooms { get; set; }
         private int QuantityOfBedrooms { get; set; }
         private List<Resident> Residents { get; set; }
@@ -15,6 +15,7 @@ namespace ExercicioMoradia.Models
             SizeInMeters = sizeInMeters;
             QuantityOfBathrooms = quantityOfBathrooms;
             QuantityOfBedrooms = quantityOfBedrooms;
+            new List<Resident>();
         }
 
         public void SetAdress(string adress)
@@ -71,13 +72,15 @@ namespace ExercicioMoradia.Models
             return 0;
         }
 
-        public void AddResident()
+        public void AddResident(Resident newResident)
         {
-
+            var resident = new List<Resident>();
+            resident.Add(newResident);
         }
-        public void RemoveResident()
+        public void RemoveResident(Resident formerResident)
         {
-
+            var resident = new List<Resident>();
+            resident.Remove(formerResident);
         }
     }
 }

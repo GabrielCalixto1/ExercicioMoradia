@@ -27,7 +27,8 @@ namespace ExercicioMoradia.Models
         }
         public override double CalculateRent()
         {
-            return 0;
+            var rent = (SizeInMeters * 40) + (GetQuantityOfBedrooms() * 10) + (GetQuantityOfBathrooms() * 5) + GetCondominiumAmount();
+            return rent;
         }
     }
 }

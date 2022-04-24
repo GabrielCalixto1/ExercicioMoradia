@@ -19,7 +19,19 @@ namespace ExercicioMoradia.Models
         }
         public override double CalculateRent()
         {
-            return 0;
+            /*Para Casa: (TamanhoEmMetros * 35) + (QuantidadeDeQuartos * 10)
++ (QuantidadeDeBanheiros * 5) + 10 % do valor caso tenha
+quintal.
+*/
+        double HaveOneYard;
+       
+        var rent = (GetSizeInMeters() * 35) + (GetQuantityOfBedrooms()* 10) + (GetQuantityOfBathrooms() * 5);
+
+         if (GetHaveAYard())
+        {
+          rent = rent * 1.1;
+        }
+            return rent;
         }
     }
 }

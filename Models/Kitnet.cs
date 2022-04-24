@@ -4,11 +4,12 @@ namespace ExercicioMoradia.Models
     {
         public Kitnet(string adresses, int cep, double sizeInMeters, int quantityOfBathrooms, int quantityOfBedrooms) : base(adresses, cep, sizeInMeters, quantityOfBathrooms, quantityOfBathrooms)
         {
-          
+
         }
-                       public override double CalculateRent()
+        public override double CalculateRent()
         {
-                return 0;
-        } 
+            var rent = SizeInMeters * 30;
+            return rent;
+        }
     }
 }
