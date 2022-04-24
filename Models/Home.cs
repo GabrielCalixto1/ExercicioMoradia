@@ -2,16 +2,73 @@ namespace ExercicioMoradia.Models
 {
     public class Home
     {
-        public string Addresses {get; set;}
-        public int Cep {get; set;}
-        public double SizeInMeters {get; set;}
-        public int QuantityOfBathrooms {get; set;}
-        public int QuantityOfBedrooms {get; set;}
-        public List<Resident> Residents  {get; set;}
+        private string Addresses { get; set; }
+        private int Cep { get; set; }
+        private double SizeInMeters { get; set; }
+        private int QuantityOfBathrooms { get; set; }
+        private int QuantityOfBedrooms { get; set; }
+        private List<Resident> Residents { get; set; }
+
+        public Home(string adresses, int cep, double sizeInMeters, int quantityOfBathrooms, int quantityOfBedrooms)
+        {
+            Addresses = adresses;
+            SizeInMeters = sizeInMeters;
+            QuantityOfBathrooms = quantityOfBathrooms;
+            QuantityOfBedrooms = quantityOfBedrooms;
+        }
+
+        public void SetAdress(string adress)
+        {
+            Addresses = adress;
+        }
+        public string GetAdress()
+        {
+            return Addresses;
+        }
+        public void SetCep(int cep)
+        {
+            Cep = cep;
+        }
+        public int GetCep()
+        {
+            return Cep;
+        }
+        public void SetSizeInMeters(double sizeInMeters)
+        {
+            SizeInMeters = sizeInMeters;
+        }
+        public double GetSizeInMeters()
+        {
+            return SizeInMeters;
+        }
+        public void SetAdress(int quantityOfBathrooms)
+        {
+            QuantityOfBathrooms = quantityOfBathrooms;
+        }
+        public int GetQuantityOfBathrooms()
+        {
+            return QuantityOfBathrooms;
+        }
+        public void SetQuantityOfBedrooms(int quantityOfBedrooms)
+        {
+            QuantityOfBedrooms = quantityOfBedrooms;
+        }
+        public int GetQuantityOfBedrooms()
+        {
+            return QuantityOfBedrooms;
+        }
+        public void SetResidents(List<Resident> residents)
+        {
+            Residents = residents;
+        }
+        public List<Resident> GetResidents()
+        {
+            return Residents;
+        }
 
         public virtual double CalculateRent()
         {
-                return 0;
+            return 0;
         }
 
         public void AddResident()

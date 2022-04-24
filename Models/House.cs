@@ -2,10 +2,24 @@ namespace ExercicioMoradia.Models
 {
     public class House : Home
     {
-        public bool HaveAYard {get; set;}
-                        public override double CalculateRent()
+        private bool HaveAYard { get; set; }
+
+        public House(string adresses, int cep, double sizeInMeters, int quantityOfBathrooms, int quantityOfBedrooms, bool haveAYard) : base(adresses, cep, sizeInMeters, quantityOfBathrooms, quantityOfBathrooms)
         {
-                return 0;
+            HaveAYard = haveAYard;
+        }
+
+        public void SetHaveAYard(bool haveAYard)
+        {
+            HaveAYard = haveAYard;
+        }
+        public bool GetHaveAYard()
+        {
+            return HaveAYard;
+        }
+        public override double CalculateRent()
+        {
+            return 0;
         }
     }
 }
