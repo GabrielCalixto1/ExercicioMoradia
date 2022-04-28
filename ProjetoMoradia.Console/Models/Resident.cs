@@ -5,6 +5,12 @@ namespace ExercicioMoradia.Models
         private string Name {get ; set;}
         private string Cpf {get; set;}
         private DateTime BirthDate {get; set;}
+        public Resident(string name, string cpf, string dataNascimento)
+        {
+            Name = name;
+            Cpf = cpf;
+            SetbirthDate(dataNascimento);
+        }
         public void SetName(string name)
         {
             Name = name;
@@ -21,11 +27,12 @@ namespace ExercicioMoradia.Models
         {
            return Cpf;
         }
-        public void SetFloor(DateTime birthDate)
+        public void SetbirthDate(string birthDate)
         {
-            BirthDate = birthDate;
+            var birthDateDateTime = DateTime.Parse(birthDate);
+            BirthDate = birthDateDateTime;
         }
-        public DateTime GetFloor()
+        public DateTime GetbirthDate()
         {
            return BirthDate;
         }
