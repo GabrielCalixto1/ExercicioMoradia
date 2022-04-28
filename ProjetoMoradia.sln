@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioMoradia", "ProjetoMoradia\ExercicioMoradia.csproj", "{B5B5CABE-790B-4F62-A3E7-C3E88C6EF1B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoMoradia.TesteUnitario", "ProjetoMoradia.TesteUnitario\ProjetoMoradia.TesteUnitario.csproj", "{8EF4CE9D-B985-499C-84DB-7D80D6C979AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B5B5CABE-790B-4F62-A3E7-C3E88C6EF1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B5CABE-790B-4F62-A3E7-C3E88C6EF1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B5CABE-790B-4F62-A3E7-C3E88C6EF1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF4CE9D-B985-499C-84DB-7D80D6C979AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF4CE9D-B985-499C-84DB-7D80D6C979AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF4CE9D-B985-499C-84DB-7D80D6C979AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF4CE9D-B985-499C-84DB-7D80D6C979AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
