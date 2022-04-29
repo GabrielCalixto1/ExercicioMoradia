@@ -7,8 +7,8 @@ namespace ExercicioMoradia.Models
         private DateTime BirthDate {get; set;}
         public Resident(string name, string cpf, string dataNascimento)
         {
-            Name = name;
-            Cpf = cpf;
+            SetName(name);
+            SetCpf(cpf);
             SetbirthDate(dataNascimento);
         }
         public void SetName(string name)
@@ -21,6 +21,11 @@ namespace ExercicioMoradia.Models
         }
         public void SetCpf(string cpf)
         {
+            if(cpf.Length != 11)
+            {
+               Cpf = null;
+                return;
+            }
             Cpf = cpf;
         }
         public string GetCpf()
