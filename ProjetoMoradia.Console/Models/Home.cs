@@ -3,9 +3,9 @@ namespace ExercicioMoradia.Models
     public class Home
     {
         private string Addresses { get; set; }
-        private int Cep { get; set; }
+        private int ZipCode { get; set; }
         protected double SizeInMeters { get; set; }
-        private int QuantityOfBathrooms { get; set; }
+        protected int QuantityOfBathrooms { get; set; }
         private int QuantityOfBedrooms { get; set; }
         private List<Resident> Residents { get; set; }
 
@@ -16,6 +16,12 @@ namespace ExercicioMoradia.Models
             QuantityOfBathrooms = quantityOfBathrooms;
             QuantityOfBedrooms = quantityOfBedrooms;
             new List<Resident>();
+
+        }
+        public Home(int zipCode, int quantityOfBathrooms)
+        {
+            SetZipCode(zipCode);
+            SetQuantityOfBathrooms(quantityOfBathrooms);
         }
 
         public void SetAdress(string adress)
@@ -26,17 +32,28 @@ namespace ExercicioMoradia.Models
         {
             return Addresses;
         }
-        public void SetCep(int cep)
+        public void SetZipCode(int zipCode)
         {
-            Cep = cep;
+
+            if (zipCode.ToString().Length == 8)
+            {
+                ZipCode = zipCode;
+            }
+
+
+
         }
-        public int GetCep()
+        public int GetZipCode()
         {
-            return Cep;
+            return ZipCode;
         }
-        public void SetSizeInMeters(double sizeInMeters)
+        public virtual void SetSizeInMeters(double sizeInMeters)
         {
-            SizeInMeters = sizeInMeters;
+            if(sizeInMeters <= 50)
+            {
+                   SizeInMeters = sizeInMeters;
+            }                 
+            
         }
         public double GetSizeInMeters()
         {
@@ -46,6 +63,14 @@ namespace ExercicioMoradia.Models
         {
             QuantityOfBathrooms = quantityOfBathrooms;
         }
+        public virtual void SetQuantityOfBathrooms(int quantityOfBathrooms)
+        {
+            if(quantityOfBathrooms >= 0 && quantityOfBathrooms <= 2)
+            {
+                    QuantityOfBathrooms = quantityOfBathrooms;
+            }
+           
+        }
         public int GetQuantityOfBathrooms()
         {
             return QuantityOfBathrooms;
@@ -53,6 +78,7 @@ namespace ExercicioMoradia.Models
         public void SetQuantityOfBedrooms(int quantityOfBedrooms)
         {
             QuantityOfBedrooms = quantityOfBedrooms;
+
         }
         public int GetQuantityOfBedrooms()
         {

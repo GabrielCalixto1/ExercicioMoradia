@@ -2,14 +2,15 @@ namespace ExercicioMoradia.Models
 {
     public class Resident
     {
-        private string Name {get ; set;}
-        private string Cpf {get; set;}
-        private DateTime BirthDate {get; set;}
-        public Resident(string name, string cpf, string dataNascimento)
+        private string Name { get; set; }
+        private string Cpf { get; set; }
+        private DateTime Birthdate { get; set; }
+        public Resident(string name, string cpf, string birthdate)
         {
             SetName(name);
             SetCpf(cpf);
-            SetbirthDate(dataNascimento);
+            SetbirthDate(birthdate);
+    
         }
         public void SetName(string name)
         {
@@ -17,30 +18,35 @@ namespace ExercicioMoradia.Models
         }
         public string GetName()
         {
-           return Name;
+            return Name;
         }
         public void SetCpf(string cpf)
         {
-            if(cpf.Length != 11)
+            if (cpf.Length != 11)
             {
-               Cpf = null;
+                Cpf = null;
                 return;
             }
             Cpf = cpf;
         }
         public string GetCpf()
         {
-           return Cpf;
+            return Cpf;
         }
         public void SetbirthDate(string birthDate)
         {
+            if (string.IsNullOrEmpty(birthDate))
+                return;
             var birthDateDateTime = DateTime.Parse(birthDate);
-            BirthDate = birthDateDateTime;
+            if (birthDateDateTime.CompareTo(DateTime.Now) > 0)
+                return;
+            Birthdate = birthDateDateTime;
+
         }
         public DateTime GetbirthDate()
         {
-           return BirthDate;
+            return Birthdate;
         }
-        
+
     }
 }

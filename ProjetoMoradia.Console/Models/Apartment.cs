@@ -6,12 +6,18 @@ namespace ExercicioMoradia.Models
         private double CondominiumAmount { get; set; }
         public Apartment(string adresses, int cep, double sizeInMeters, int quantityOfBathrooms, int quantityOfBedrooms, int floor, double condominiumAmount) : base(adresses, cep, sizeInMeters, quantityOfBathrooms, quantityOfBathrooms)
         {
-            Floor = floor;
+            SetSizeInMeters(sizeInMeters);
+            SetFloor(floor);
+            SetQuantityOfBathrooms(quantityOfBathrooms);
             CondominiumAmount = condominiumAmount;
+
         }
         public void SetFloor(int floor)
         {
-            Floor = floor;
+            if (floor <= 10)
+            {
+                Floor = floor;
+            }
         }
         public int GetFloor()
         {
@@ -29,6 +35,21 @@ namespace ExercicioMoradia.Models
         {
             var rent = (SizeInMeters * 40) + (GetQuantityOfBedrooms() * 10) + (GetQuantityOfBathrooms() * 5) + GetCondominiumAmount();
             return rent;
+        }
+        public override void SetQuantityOfBathrooms(int quantityOfBathrooms)
+        {
+            if (quantityOfBathrooms >= 0 && quantityOfBathrooms <= 3)
+            {
+                QuantityOfBathrooms = quantityOfBathrooms;
+            }
+        }
+        public override void SetSizeInMeters(double sizeInMeters)
+        {
+            if (sizeInMeters <= 60)
+            {
+                SizeInMeters = sizeInMeters;
+            }
+
         }
     }
 }
